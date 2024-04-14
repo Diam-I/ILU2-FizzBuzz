@@ -1,11 +1,10 @@
 package fizzbuzz;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
-import org.junit.Test;
-
-public class FizzBuzzTest {
+class FizzBuzzTest {	
 	@Test
 	void test() {
-		fail("Not yet implemented");
+		assertEquals(FizzBuzz.fizzbuzz(1),"1");
 	}
 }
