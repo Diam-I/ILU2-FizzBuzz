@@ -115,23 +115,36 @@ public class GameTest {
 		game.roll(8);
 		assertEquals(131, game.score());
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	}
+	
+	@Test 
+	void test_genie() {
+		for (int i=0 ; i<12 ; i++) {
+			game.roll(10);
+		}
+		
+		assertEquals(300, game.score());
 	}
 
+	@Test 
+	void test_dix_spares() {
+		for (int i=0; i<10;i++) {
+			game.roll(5);
+			game.roll(5);
+		}
+		game.roll(6);
+		assertEquals(151,game.score());
+	}
+	
+	@Test
+	void test_spare_fin() {
+		for (int i=0;i<18;i++) {
+			game.roll(0);
+		}
+		game.roll(7);
+		game.roll(3);
+		game.roll(5);
+		assertEquals(15,game.score());
+	}
+	
 }
