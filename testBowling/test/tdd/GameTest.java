@@ -147,4 +147,36 @@ public class GameTest {
 		assertEquals(15,game.score());
 	}
 	
+	@Test 
+	void test_strike_fin() {
+		for (int i=0; i<18;i++) {
+			game.roll(0);
+		}
+		game.roll(10);
+		game.roll(5);
+		game.roll(4);
+		assertEquals(19,game.score());
+	}
+	
+	@Test 
+	void test_spare_strike() {
+		
+		game.roll(10);
+		game.roll(4);
+		game.roll(6);
+		game.roll(10);
+		game.roll(4);
+		game.roll(6);
+		game.roll(10);
+		game.roll(4);
+		game.roll(6);
+		game.roll(10);
+		game.roll(4);
+		game.roll(6);
+		game.roll(10);
+		game.roll(4);
+		game.roll(6);
+		game.roll(10);
+		assertEquals(200,game.score());
+	}
 }
